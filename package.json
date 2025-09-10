@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/server.js",
   "scripts": {
-    "dist":"npx tsc",
+    "dist": "npx tsc",
     "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",
     "prepare": "husky"
@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^24.3.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
