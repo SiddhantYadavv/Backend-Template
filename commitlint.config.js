@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ['@commitlint/config-conventional',"@commitlint/cli"],
   rules: {
     'type-enum': [2, 'always', [
