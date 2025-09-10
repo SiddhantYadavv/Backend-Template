@@ -15,6 +15,6 @@ module.exports = {
       'revert',  // Revert a previous commit
       'wip'      // Work in progress
     ]],
-    'subject-case': [2, 'always', ['sentence-case', 'lower-case']] // enforce sentence case for the subject line
+    'subject-case': [2, 'always', ['sentence-case']] // enforce sentence case for the subject line
   }
 };
