@@ -3,6 +3,7 @@ import type { THttpError } from "../types/types.js"
 import responseMessage from "../constants/responseMessage.js"
 import config from "../config/config.js"
 import { EApplicationEnvironment } from "../constants/application.js"
+import logger from "./logger.js"
 
 export default (
   err: Error | unknown,
@@ -26,8 +27,8 @@ export default (
   }
 
   // Log
-  // eslint-disable-next-line no-console
-  console.error(`CONTROLLER_ERROR`, {
+   
+  logger.error(`CONTROLLER_ERROR`, {
     meta: errorObj
   })
 

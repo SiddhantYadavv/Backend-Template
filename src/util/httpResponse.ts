@@ -2,7 +2,7 @@ import type { Request, Response } from "express"
 import type { THttpResponse } from "../types/types.js"
 import config from "../config/config.js"
 import { EApplicationEnvironment } from "../constants/application.js"
-// import logger from './logger'
+import logger from "./logger.js"
 
 export default (
   req: Request,
@@ -24,8 +24,8 @@ export default (
   }
 
   // Log
-  // eslint-disable-next-line no-console
-  console.log(`CONTROLLER_RESPONSE`, {
+   
+  logger.log(`CONTROLLER_RESPONSE`, {
     meta: response
   })
 

@@ -1,12 +1,12 @@
-/* eslint-disable no-console */
-// console.log("working now", process.env)
+ 
 import app from "./app.js"
 import config from "./config/config.js"
+import logger from "./util/logger.js"
 
 const server = app.listen(config.PORT)
 ;(() => {
   try {
-    console.info("app started", {
+    logger.info("app started", {
       meta: {
         PORT: config.PORT,
         SERVER_URL: config.SERVER_URL,
@@ -14,12 +14,12 @@ const server = app.listen(config.PORT)
       }
     })
   } catch (error) {
-    console.log("Error connecting to database", {
+    logger.log("Error connecting to database", {
       meta: error
     })
     server.close((error) => {
       if (error) {
-        console.error("application Error", { meta: error })
+        logger.error("application Error", { meta: error })
       }
       process.exit(1)
     })
