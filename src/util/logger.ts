@@ -8,6 +8,9 @@ import config from "../config/config.js"
 import { EApplicationEnvironment } from "../constants/application.js"
 import path from "path"
 import { fileURLToPath } from "url"
+import * as sourceMapSupport from "source-map-support"
+
+sourceMapSupport.install()
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
