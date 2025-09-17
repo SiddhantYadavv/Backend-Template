@@ -19,6 +19,7 @@ export default defineConfig({
     ],
     rules: {
       "no-console": "error",
+      "no-useless-catch":0,
       "quotes": ["error", "double", { allowTemplateLiterals: true }],
     },
 }
