@@ -6,12 +6,8 @@ import logger from "./util/logger.js"
 const server = app.listen(config.PORT)
 ;(async () => {
   try {
-    const connection = await databaseService.connect()
-    logger.info("Database connected ", {
-      meta: {
-        CONNECTION_NAME: connection.name
-      }
-    })
+    await databaseService.connect()
+    logger.info("Database connected ")
     logger.info("Application started", {
       meta: {
         PORT: config.PORT,
