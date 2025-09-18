@@ -1,13 +1,18 @@
-import app from "./app.js"
 import config from "./config/config.js"
+import app from "./app.js"
+import { initRateLimiter } from "./config/rateLimiter.js"
 import databaseService from "./service/databaseService.js"
 import logger from "./util/logger.js"
 
 const server = app.listen(config.PORT)
 ;(async () => {
   try {
-    await databaseService.connect()
-    logger.info("Database connected ")
+    const connection = await databaseService.connect()
+    logger.info("Database connected:", connection)
+
+    initRateLimiter(connection)
+    logger.info("RATE_LIMITER_INITIATED")
+
     logger.info("Application started", {
       meta: {
         PORT: config.PORT,

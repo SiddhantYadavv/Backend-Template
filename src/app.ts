@@ -10,7 +10,7 @@ import router from "./router/apiRouter.js"
 import globalErrorHandler from "./middleware/globalErrorHandler.js"
 import responseMessage from "./constants/responseMessage.js"
 import httpError from "./util/httpError.js"
-import helmet from "helmet"
+// import helmet from "helmet"
 import cors from "cors"
 
 const app: Application = express()
@@ -18,7 +18,7 @@ const app: Application = express()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-app.use(helmet())
+// app.use(helmet())
 app.use(
   cors({
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
